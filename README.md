@@ -10,6 +10,6 @@ Workflow:
 - when I have time, sit down and organize all the todos in one go
 - todos are scheduled and synchronized with your calendar
 
-[[Declutter]] your life!
+Declutter your life!
 
 Get every stupid todo out of your head asap, let technology do the remembering
