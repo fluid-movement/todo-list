@@ -1,4 +1,4 @@
-<li class="border border-transparent rounded-lg px-6 py-4 min-h-36 bg-white/75 hover:bg-white/50 font-serif">
+<li class="border border-transparent rounded-sm shadow-2xl px-6 py-4 min-h-36 bg-white/75 hover:bg-white/50 font-serif">
     <form wire:submit.prevent="update" class="h-full">
         <div class="flex flex-col justify-between items-center h-full">
             @if($editing)

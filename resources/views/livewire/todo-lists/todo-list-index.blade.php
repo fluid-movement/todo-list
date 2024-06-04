@@ -1,4 +1,4 @@
-<div class="bg-stone-100 h-full p-4">
+<div class="bg-stone-100 h-full p-4 shadow-2xl">
     <livewire:todo-lists.todo-list-create/>
     <ul class="py-2">
     <x-todo-list-entry

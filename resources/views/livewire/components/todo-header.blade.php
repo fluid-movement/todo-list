@@ -1,6 +1,6 @@
 <div class="flex justify-between">
     <div class="flex gap-4 items-center">
-        <h1 class="mt-2 mb-4 text-2xl font-bold leading-none tracking-tight text-gray-900 md:text-4xl lg:text-6xl">
+        <h1 class="mt-2 mb-4 text-2xl font-semibold leading-none text-gray-900 md:text-4xl lg:text-6xl">
             {{$todoList->name ?: $todoList->defaultListName()}}
         </h1>
         @if($todoList->id)
