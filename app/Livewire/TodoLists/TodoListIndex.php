@@ -2,13 +2,17 @@
 
 namespace App\Livewire\TodoLists;
 
+use App\Models\TodoList;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
 class TodoListIndex extends Component
 {
-    public $todolists;
-
+    public $todoLists;
+    public $newTodoList;
+    public TodoList $activeTodoList;
+    #[On('todo-added-to-list')]
+    #[On('todo-deleted')]
     public function render()
     {
         return view('livewire.todo-lists.todo-list-index');
@@ -19,9 +23,14 @@ class TodoListIndex extends Component
         $this->loadTodoLists();
     }
 
-    #[On('todoListsUpdated')]
+    #[On('todo-list-created')]
     public function loadTodoLists()
     {
-        $this->todolists = auth()->user()->todoLists()->get();
+        $this->todoLists = auth()->user()->todoLists()->get();
+        foreach ($this->todoLists as $todoList) {
+            if ($todoList->id == $this->activeTodoList->id) {
+                $todoList->setActive();
+            }
+        }
     }
 }

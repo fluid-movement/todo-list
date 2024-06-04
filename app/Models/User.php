@@ -42,6 +42,11 @@ class User extends Authenticatable
         return $this->hasMany(TodoList::class);
     }
 
+    public function defaultTodoListName(): string
+    {
+        return $this->default_list_name ?: 'Campfire 🔥';
+    }
+
     /**
      * Get the attributes that should be cast.
      *

@@ -14,7 +14,7 @@ new #[Layout('layouts.guest')] class extends Component
     public function sendVerification(): void
     {
         if (Auth::user()->hasVerifiedEmail()) {
-            $this->redirectIntended(default: route('todos.index', absolute: false), navigate: true);
+            $this->redirectIntended(default: route('todos.default', absolute: false), navigate: true);
 
             return;
         }

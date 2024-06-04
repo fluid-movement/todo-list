@@ -27,6 +27,6 @@ class TodoListCreate extends Component
         $this->reset(['name']);
 
         // Emit the event
-        $this->dispatch('todoListsUpdated');
+        $this->dispatch('todo-list-created');
     }
 }

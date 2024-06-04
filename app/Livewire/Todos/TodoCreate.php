@@ -2,10 +2,12 @@
 
 namespace App\Livewire\Todos;
 
+use App\Models\TodoList;
 use Livewire\Component;
 
 class TodoCreate extends Component
 {
+    public TodoList $activeTodoList;
     public $description;
 
     public function render()
@@ -22,11 +24,12 @@ class TodoCreate extends Component
         auth()->user()->todos()->create([
             'description' => $this->description,
             'user_id' => auth()->id(),
+            'todo_list_id' => $this->activeTodoList->id ?: null
         ]);
 
         $this->reset(['description']);
 
         // Emit the event
-        $this->dispatch('todosUpdated');
+        $this->dispatch('todo-added-to-list');
     }
 }

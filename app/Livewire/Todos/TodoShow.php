@@ -44,12 +44,12 @@ class TodoShow extends Component
         $this->todo->description = $this->description;
         $this->todo->save();
         $this->editing = false;
-        $this->dispatch('todosUpdated');
+        $this->dispatch('todos-updated');
     }
+
     public function delete()
     {
         $this->todo->delete();
-
-        $this->dispatch('todosUpdated');
+        $this->dispatch('todo-deleted');
     }
 }
