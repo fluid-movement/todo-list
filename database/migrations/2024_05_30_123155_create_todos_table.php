@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamp('completed_at')->nullable();
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->foreignId('todo_list_id')->nullable()->constrained()->cascadeOnDelete();
+            $table->integer('sorting_order')->default(0);
             $table->timestamps();
         });
     }

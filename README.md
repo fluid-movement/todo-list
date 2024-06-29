@@ -27,3 +27,4 @@ Get every stupid todo out of your head asap, let technology do the remembering
 - create a calendar
 - make a "suggest a todo" feature
 - create todos from a chatbot
+- create lists out of todos, to add todos to

@@ -1,11 +1,11 @@
-<div class="bg-stone-100 h-full p-4 shadow-2xl">
+<div class="bg-secondary h-full p-6 shadow-2xl">
     <livewire:todo-lists.todo-list-create/>
     <ul class="py-2">
     <x-todo-list-entry
         :link="route('todos.default')"
         :active="!$activeTodoList->id"
         :title="$activeTodoList->defaultListName()"
-        :count="5"
+        :count="$activeTodoList->defaultTodoCount()"
         :key="$activeTodoList->defaultListName()"
     />
     @foreach($todoLists as $todoList)

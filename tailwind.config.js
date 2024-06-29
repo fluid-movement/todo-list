@@ -1,5 +1,6 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
 import forms from '@tailwindcss/forms';
+import daisyui from "daisyui";
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -12,11 +13,24 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Inconsolata', ...defaultTheme.fontFamily.sans],
-                serif: ['Bitter', ...defaultTheme.fontFamily.serif],
+                sans: ['Noto', ...defaultTheme.fontFamily.sans],
             },
         },
     },
 
-    plugins: [forms],
+    plugins: [forms, daisyui],
+
+    daisyui: {
+        themes: [
+            {
+                light: {
+                    "primary": "#7dd3fc", // Your custom primary color
+                    "secondary": "#f5f5f4", // stone-100
+                    "neutral": "#d6d3d1", // stone-300
+                    "accent": "#d9f99d", // Your custom primary color
+                },
+            },
+        ],
+    },
+
 };

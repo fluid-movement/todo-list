@@ -3,6 +3,7 @@
 namespace App\Livewire\Todos;
 
 use App\Models\TodoList;
+use Illuminate\Database\Eloquent\Collection;
 use Livewire\Attributes\On;
 use Livewire\Component;
 
@@ -10,6 +11,8 @@ class TodoIndex extends Component
 {
     public $todos;
     public TodoList $activeTodoList;
+    public Collection $todoLists;
+
     public function render()
     {
         return view('livewire.todos.todo-index');
@@ -18,6 +21,7 @@ class TodoIndex extends Component
     public function mount(): void
     {
         $this->loadTodos();
+        $this->todoLists = auth()->user()->todoLists()->get();
     }
 
     #[On('todos-updated')]

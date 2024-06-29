@@ -25,6 +25,11 @@ class TodoList extends Model
         return $this->todos()->count();
     }
 
+    public function defaultTodoCount()
+    {
+        return auth()->user()->todos()->whereNull('todo_list_id')->get()->count();
+    }
+
     public function setActive()
     {
         $this->active = true;
@@ -33,5 +38,10 @@ class TodoList extends Model
     public function defaultListName()
     {
         return auth()->user()->defaultTodoListName();
+    }
+
+    protected function isDefaultList()
+    {
+        return $this->name === $this->defaultListName();
     }
 }
